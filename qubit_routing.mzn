@@ -42,7 +42,7 @@ constraint
     forall(t in 1..t_max-1)(
         forall(u, v in 1..n_nodos)(
             % Obligamos a que ambos nodos hagan swap
-            s[u,v,t] == s[v,u,t]
+            (s[u,v,t] == s[v,u,t])
             /\ 
             % Si no existe el cable no podemos hacer el swap
             (not adj[u,v] -> s[u,v,t] == false)
@@ -51,12 +51,12 @@ constraint
             (u == v -> s[u,v,t] == false)
             /\
             % El nodo u al hacer SWAP tendra lo que tenia el nodo v el siguiente instante
-            s[u,v,t] -> (z[u, t+1] == z[v, t])
+            (s[u,v,t] -> (z[u, t+1] == z[v, t]))
         )
         /\
         forall(u in 1..n_nodos)(
             % Un nodo solo puede hacer SWAP como maximo una vez
-            sum(v in 1..n_nodos)(bool2int(s[u,v,t])) <= 1
+            (sum(v in 1..n_nodos)(bool2int(s[u,v,t])) <= 1)
             /\
             % Si no ha habiado SWAP no cambia nada
             (sum(v in 1..n_nodos)(bool2int(s[u,v,t])) == 0) -> (z[u, t+1] == z[u, t])
