@@ -58,7 +58,7 @@ constraint
             % Un nodo solo puede hacer SWAP como maximo una vez
             (sum(v in 1..n_nodos)(bool2int(s[u,v,t])) <= 1)
             /\
-            % Si no ha habiado SWAP no cambia nada
+            % Si no ha habiado SWAP no cambia la posicion del qubit
             (sum(v in 1..n_nodos)(bool2int(s[u,v,t])) == 0) -> (z[u, t+1] == z[u, t])
         )
     )
