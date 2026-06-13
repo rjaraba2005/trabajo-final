@@ -21,7 +21,7 @@ var 1..t_max: makespan;
 constraint 
     forall(t in 1..t_max)(
         % Nos aseguramos de que no haya dos qubits en el mismo nodo a la vez
-        alldifferent([ x[q, t] | q in 1..n_qubits ])
+        alldifferent([x[q, t] | q in 1..n_qubits])
         /\
         forall(q in 1..n_qubits)(
             % Colocamos el valor elegido en la otra matriz

@@ -29,7 +29,7 @@ class QuantumStudio:
 
         # Opciones para seleccionar una placa base por defecto
         
-        tk.Label(marco_control, text="PRESETS INDUSTRIALES", fg="#D39F19", bg="#101620", font=("Arial", 11, "bold")).pack(pady=15)
+        tk.Label(marco_control, text="CUADRÍCULAS INDUSTRIALES", fg="#D39F19", bg="#101620", font=("Arial", 11, "bold")).pack(pady=15)
         # Creamos el menu usando StringVar para guardar el texto
         self.var_preset = tk.StringVar()
         self.menu_desplegable = ttk.Combobox(marco_control, textvariable=self.var_preset, state="readonly")
