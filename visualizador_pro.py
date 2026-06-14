@@ -99,7 +99,7 @@ if res.solution:
         ax_bg.axis('off') 
     # Si no hay imagen de fondo ponemos el fondo gris
     except FileNotFoundError:
-        fig.patch.set_facecolor('#1E1E1E')
+        fig.patch.set_facecolor("#090909")
 
     # Seleccionamos los colores de los qubits
     colores_base = ["#EB3E3E", "#2F84E4", "#2BBD54", "#E0A12B", "#8C44C8", "#EA960F"]
